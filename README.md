@@ -1,51 +1,50 @@
-# 🎙️ AI-Storyteller
+# 🎨 AI-Based Image Generator
 
-🧠 **AI Storyteller with Multilingual Narration**
+🧠 **Text-to-Image Generator using Stable Diffusion**
 
-This project is an **AI-powered storytelling app** that uses **Hugging Face Transformers**, **Streamlit**, and **gTTS** to generate engaging stories from user prompts. Users can customize the story’s genre, tone, and length, translate it into multiple languages, and listen to an AI-generated narration in their selected language.
+This project is an AI-powered image generation app that uses **Hugging Face Diffusers**, **Gradio**, and **Stable Diffusion v1.5** to create high-quality images from user prompts. The interface allows users to adjust parameters like resolution, guidance scale, batch size, and more — with real-time generation and a rich visual gallery.
 
 ---
 
 ## 🚀 Features
 
-- 📜 Enter your story prompt and select genre/tone  
-- 📚 Choose from **Fantasy**, **Sci-Fi**, **Mystery**, and more  
-- 🎭 Set the tone: **Light-hearted**, **Dramatic**, **Funny**, etc.  
-- 🧾 Choose story length (**100–1000 words**)  
-- 🌐 **Multilingual translation**: English, Hindi, French, Spanish  
-- 🔊 **Narration** using gTTS (**Google Text-to-Speech**)  
-- 📥 **Downloadable MP3** narration  
-- 🎨 **Streamlit-based UI** for seamless interaction  
+- ✏️ **Enter your own image prompt**  
+- 🖼️ **Resolution control**: 256 to 1024 pixels  
+- 🔁 **Batch generation**: 1–4 images per prompt  
+- 🎛️ **Adjust steps and guidance scale**  
+- 🎲 **Seed control** for reproducibility or randomness  
+- ⚙️ **Optimized GPU usage** using attention slicing and xformers (if available)  
+- 📜 **Prompt history** and **activity log** tracking  
+- 🖥️ **Gradio Blocks-based interface** with custom styling  
+- 🌐 **Public URL** via Colab for easy sharing
 
 ---
 
 ## 🛠️ Tech Stack
 
-| Tool / Library           | Purpose                          |
-|--------------------------|----------------------------------|
-| 🧠 Hugging Face Transformers | Story generation & translation   |
-| 🌐 Falcon-7B-Instruct      | Large Language Model (LLM)      |
-| 🌍 Helsinki-NLP Models     | Language translation            |
-| 🔊 gTTS                   | Text-to-speech narration         |
-| 🎨 Streamlit             | Web UI Framework                 |
-| 🐍 Python                | Core Logic                       |
-| 🗂️ tempfile, os          | Temporary MP3 file handling      |
+| Tool / Library            | Purpose                              |
+|---------------------------|--------------------------------------|
+| 🧠 Hugging Face Diffusers | Stable Diffusion pipeline            |
+| 🎨 Gradio (Blocks)        | Web UI and user interaction          |
+| 🔄 DPMSolver Scheduler    | Faster inference with better results |
+| 🖥️ Google Colab           | GPU execution and deployment         |
+| 🐍 Python                 | Core application logic               |
+| 📦 Torch / Xformers       | Model execution & memory efficiency  |
 
 ---
 
-## 📦 Installation
+## 📦 Installation (Colab Setup)
 
 ### 🔧 Prerequisites
 
-- ✅ Python **3.8+**
-- ✅ A **stable internet connection** (to download models)
-- ✅ Optional: **GPU** for faster performance (recommended for large models)
+- Python 3.8+
+- Google Colab with GPU enabled (Recommended: T4)
+- Internet connection to fetch models
 
----
-
-### 📥 Clone and Install
+### 📥 Setup Instructions
 
 ```bash
-git clone https://github.com/your-username/ai-storyteller.git
-cd ai-storyteller
-pip install -r requirements.txt
+!pip install --upgrade pip
+!pip install gradio==3.50.2
+!pip install diffusers transformers accelerate torch torchvision pillow xformers -q
+!pip install --upgrade huggingface_hub
