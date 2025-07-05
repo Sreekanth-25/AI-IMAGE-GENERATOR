@@ -48,3 +48,55 @@ This project is an AI-powered image generation app that uses **Hugging Face Diff
 !pip install gradio==3.50.2
 !pip install diffusers transformers accelerate torch torchvision pillow xformers -q
 !pip install --upgrade huggingface_hub
+
+
+Run the script in Google Colab or your local GPU environment:
+
+bash
+Copy
+Edit
+python main.py
+Or in Google Colab, the app will auto-launch:
+
+Click Load Fast Model to initialize Stable Diffusion
+
+Enter a prompt and adjust generation settings
+
+Click Generate Images Fast!
+
+View outputs in the interactive gallery
+
+Click Show History to see previous prompts
+
+📌 Example Prompts
+A majestic dragon flying over snow-capped mountains, fantasy digital art
+
+Cyberpunk city skyline at night, neon glow, highly detailed
+
+A cute puppy sitting on grass, photorealistic, golden hour lighting
+
+An astronaut walking on Mars with Earth in the sky, 8k render
+
+🧪 Output & Validation
+Prompt accuracy: Excellent alignment between text and image
+
+Generation speed: ~5 seconds per image (on Colab GPU)
+
+Visual quality: Highly detailed outputs at all resolutions
+
+Error handling: Clear messages if invalid inputs or model not loaded
+
+Responsive UI with gallery and logs
+
+📤 Output Format
+Generated Images displayed in gr.Gallery
+
+Status Info includes: seed, steps, guidance, size, generation time
+
+Logs stored in:
+
+🔹 Generation History
+
+🔹 Activity Log
+
+
